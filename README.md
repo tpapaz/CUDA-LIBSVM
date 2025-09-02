@@ -24,12 +24,46 @@ Functionality / User interface
 
     Same as LIBSVM
 
-### PREREQUISITES
+### BUILDING THE PROJECT (MODERN)
 
-    LIBSVM prerequisites
-    NVIDIA Graphics card with CUDA support
-    Latest NVIDIA drivers for GPU
-	
+This project now uses [CMake](https://cmake.org/) to provide a modern, cross-platform build system.
+
+**Prerequisites:**
+*   A C++ compiler (e.g., GCC, Clang, MSVC)
+*   The [NVIDIA CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (version 11.0 or newer recommended)
+*   [CMake](https://cmake.org/download/) (version 3.12 or newer)
+
+**Build Steps:**
+
+1.  **Create a build directory:**
+    It's good practice to create a separate directory for the build files.
+
+    ```bash
+    mkdir build
+    cd build
+    ```
+
+2.  **Run CMake:**
+    From the `build` directory, run CMake to generate the build files for your platform (e.g., Makefiles on Linux, a Visual Studio solution on Windows).
+
+    ```bash
+    cmake ..
+    ```
+
+3.  **Compile the project:**
+    Now, use the generated build files to compile the project.
+
+    *   On Linux (with Makefiles):
+        ```bash
+        make
+        ```
+    *   On Windows (with MSVC):
+        ```bash
+        cmake --build . --config Release
+        ```
+
+    This will create the `svm-train-gpu` executable inside the `build` directory.
+
 ### PERFORMANCE COMPARISON
 
 To showcase the performance gain using the GPU-accelerated LIBSVM we present an example run.
